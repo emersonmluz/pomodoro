@@ -40,7 +40,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickSgControl(_ sender: Any) {
-        
+        reset()
+        switch sgControl.selectedSegmentIndex {
+            case 0:
+                pomodoroMinute = 24
+            case 1:
+                pomodoroMinute = 4
+            case 2:
+                pomodoroMinute = 14
+        default:
+            print("Algo de errado não está certo.")
+        }
     }
     
     func time () {
