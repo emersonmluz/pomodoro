@@ -32,6 +32,10 @@ class ViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {timer in
             self.time()
+            if sender.titleLabel?.text == "Start" || self.pomodoroMinute == 0 && self.pomodoroSeconds == -1 {
+                timer.invalidate()
+                self.reset()
+            }
         }
     }
     
@@ -54,10 +58,17 @@ class ViewController: UIViewController {
         lbTime.text = self.pomodoroTime
         pomodoroSeconds -= 1
         
-        if pomodoroSeconds == 0 {
+        if pomodoroSeconds == 0 && pomodoroMinute != 0 {
             pomodoroMinute -= 1
             pomodoroSeconds = 59
         }
+    }
+    
+    func reset () {
+        lbTime.text = "00:00"
+        pomodoroMinute = 24
+        pomodoroSeconds = 59
+        btStart.titleLabel?.text = "Start"
     }
     
 }
