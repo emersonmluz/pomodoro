@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQ2-sr-yC1" userLabel="screen">
+                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vlg-hW-OYG">
+                                        <rect key="frame" x="48.666666666666657" y="10" width="278" height="32"/>
+                                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <segments>
+                                            <segment title="Pomodoro"/>
+                                            <segment title="Short Break"/>
+                                            <segment title="Long Break"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="clickSgControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="S1l-bP-rpX"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OM1-bf-rTb">
+                                        <rect key="frame" x="62.333333333333329" y="309.66666666666669" width="250.33333333333337" height="112"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="100"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTP-ps-ZXe">
+                                        <rect key="frame" x="97.666666666666686" y="451.66666666666669" width="180" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="M0x-sm-G08"/>
+                                            <constraint firstAttribute="width" constant="180" id="ecz-y9-qqW"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start">
+                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                                            <color key="baseForegroundColor" red="0.85098039215686272" green="0.32941176470588235" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zkO-vp-P8D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zTP-ps-ZXe" firstAttribute="top" secondItem="OM1-bf-rTb" secondAttribute="bottom" constant="30" id="FZl-v6-Bnh"/>
+                                    <constraint firstItem="OM1-bf-rTb" firstAttribute="centerX" secondItem="MQ2-sr-yC1" secondAttribute="centerX" id="I61-d1-sgT"/>
+                                    <constraint firstItem="vlg-hW-OYG" firstAttribute="centerX" secondItem="MQ2-sr-yC1" secondAttribute="centerX" id="PzI-tA-Q2f"/>
+                                    <constraint firstItem="zTP-ps-ZXe" firstAttribute="centerX" secondItem="MQ2-sr-yC1" secondAttribute="centerX" id="TnS-r2-gWK"/>
+                                    <constraint firstItem="OM1-bf-rTb" firstAttribute="centerY" secondItem="MQ2-sr-yC1" secondAttribute="centerY" id="jK9-li-f2k"/>
+                                    <constraint firstItem="vlg-hW-OYG" firstAttribute="top" secondItem="MQ2-sr-yC1" secondAttribute="top" constant="10" id="vcu-qa-4TU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.32941176470588235" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MQ2-sr-yC1" secondAttribute="trailing" id="8qx-sT-D67"/>
+                            <constraint firstItem="MQ2-sr-yC1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JvY-CC-od4"/>
+                            <constraint firstItem="MQ2-sr-yC1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XPj-98-yfg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MQ2-sr-yC1" secondAttribute="bottom" id="kUx-PD-V4e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btStart" destination="zTP-ps-ZXe" id="kBp-pp-8ch"/>
+                        <outlet property="lbTime" destination="OM1-bf-rTb" id="Tyi-dg-ssr"/>
+                        <outlet property="sgControl" destination="vlg-hW-OYG" id="OTK-tR-5QM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="4"/>
+        </scene>
+    </scenes>
+</document>
