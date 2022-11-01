@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var sgControl: UISegmentedControl!
     
-    var pomodoroMinute: Int = 0
-    var pomodoroSeconds: Int = 5
+    var pomodoroMinute: Int = 24
+    var pomodoroSeconds: Int = 59
     var pomodoroTime: String = ""
     
     var sound = AVAudioPlayer()
