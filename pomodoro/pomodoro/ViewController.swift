@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -13,12 +14,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var sgControl: UISegmentedControl!
     
-    var pomodoroMinute: Int = 24
-    var pomodoroSeconds: Int = 59
+    var pomodoroMinute: Int = 0
+    var pomodoroSeconds: Int = 5
     var pomodoroTime: String = ""
+    
+    var sound = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            let effect = Bundle.main.path(forResource: "lesson-25_som-irritante", ofType: "WAV")
+            try sound = AVAudioPlayer(contentsOf: URL(fileURLWithPath: effect!))
+        } catch {
+            print("Sound não encontrado.")
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -45,6 +55,7 @@ class ViewController: UIViewController {
             if self.pomodoroMinute == 0 && self.pomodoroSeconds == -1 {
                 timer.invalidate()
                 sender.setTitle("OK", for: .normal)
+                self.sound.play()
             }
         }
     }

@@ -13,6 +13,7 @@
 		EE20E0F629103E0600192862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE20E0F429103E0600192862 /* Main.storyboard */; };
 		EE20E0F829103E0700192862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE20E0F729103E0700192862 /* Assets.xcassets */; };
 		EE20E0FB29103E0700192862 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE20E0F929103E0700192862 /* LaunchScreen.storyboard */; };
+		EE20E1032910C34D00192862 /* lesson-25_som-irritante.WAV in Resources */ = {isa = PBXBuildFile; fileRef = EE20E1022910C34D00192862 /* lesson-25_som-irritante.WAV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		EE20E0F729103E0700192862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE20E0FA29103E0700192862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE20E0FC29103E0700192862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE20E1022910C34D00192862 /* lesson-25_som-irritante.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "lesson-25_som-irritante.WAV"; path = "../../../Downloads/lesson-25_som-irritante.WAV"; sourceTree = "<group>"; };
+		EE20E1052910C36800192862 /* lesson-25_som-irritante.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "lesson-25_som-irritante.WAV"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +43,7 @@
 		EE20E0E229103E0600192862 = {
 			isa = PBXGroup;
 			children = (
+				EE20E1022910C34D00192862 /* lesson-25_som-irritante.WAV */,
 				EE20E0ED29103E0600192862 /* pomodoro */,
 				EE20E0EC29103E0600192862 /* Products */,
 			);
@@ -56,6 +60,7 @@
 		EE20E0ED29103E0600192862 /* pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				EE20E1042910C35F00192862 /* sounds */,
 				EE20E0EE29103E0600192862 /* AppDelegate.swift */,
 				EE20E0F029103E0600192862 /* SceneDelegate.swift */,
 				EE20E0F229103E0600192862 /* ViewController.swift */,
@@ -65,6 +70,14 @@
 				EE20E0FC29103E0700192862 /* Info.plist */,
 			);
 			path = pomodoro;
+			sourceTree = "<group>";
+		};
+		EE20E1042910C35F00192862 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EE20E1052910C36800192862 /* lesson-25_som-irritante.WAV */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE20E1032910C34D00192862 /* lesson-25_som-irritante.WAV in Resources */,
 				EE20E0FB29103E0700192862 /* LaunchScreen.storyboard in Resources */,
 				EE20E0F829103E0700192862 /* Assets.xcassets in Resources */,
 				EE20E0F629103E0600192862 /* Main.storyboard in Resources */,
