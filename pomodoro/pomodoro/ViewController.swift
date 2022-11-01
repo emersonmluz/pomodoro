@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     var pomodoroMinute: Int = 24
     var pomodoroSeconds: Int = 59
     var pomodoroTime: String = ""
-    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +50,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickSgControl(_ sender: Any) {
-        guard btStart.titleLabel?.text != "Start" else {return}
         btStart.setTitle("Start", for: .normal)
         reset()
     }
