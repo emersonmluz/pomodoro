@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         
         if sender.titleLabel?.text == "Start" {
             sender.setTitle("Stop", for: .normal)
+            sender.titleLabel?.font = UIFont(name: "Arial-BoldMT", size: 30)
         } else {
             sender.setTitle("Start", for: .normal)
         }
