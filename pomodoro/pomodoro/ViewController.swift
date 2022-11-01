@@ -13,9 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var sgControl: UISegmentedControl!
     
-    var pomodoroMinute: Int = 24
-    var pomodoroSeconds: Int = 59
+    var pomodoroMinute: Int = 0
+    var pomodoroSeconds: Int = 5
     var pomodoroTime: String = ""
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: UIButton) {
+        
+        guard sender.titleLabel?.text != "OK" else {
+            sender.setTitle("Start", for: .normal)
+            reset()
+            return
+        }
         
         if sender.titleLabel?.text == "Start" {
             sender.setTitle("Stop", for: .normal)
@@ -36,21 +43,17 @@ class ViewController: UIViewController {
                 timer.invalidate()
                 self.reset()
             }
+            if self.pomodoroMinute == 0 && self.pomodoroSeconds == -1 {
+                sender.setTitle("OK", for: .normal)
+            }
         }
     }
     
     @IBAction func clickSgControl(_ sender: Any) {
-        reset()
-        switch sgControl.selectedSegmentIndex {
-            case 0:
-                pomodoroMinute = 24
-            case 1:
-                pomodoroMinute = 4
-            case 2:
-                pomodoroMinute = 14
-        default:
-            print("Algo de errado não está certo.")
+        if btStart.titleLabel?.text == "Stop" {
+            btStart.setTitle("Start", for: .normal)
         }
+        reset()
     }
     
     func time () {
@@ -75,10 +78,20 @@ class ViewController: UIViewController {
     }
     
     func reset () {
-        lbTime.text = "00:00"
-        pomodoroMinute = 24
+        switch sgControl.selectedSegmentIndex {
+            case 0:
+                pomodoroMinute = 24
+                lbTime.text = "25:00"
+            case 1:
+                pomodoroMinute = 4
+                lbTime.text = "5:00"
+            case 2:
+                pomodoroMinute = 14
+                lbTime.text = "15:00"
+        default:
+            print("Algo de errado não está certo.")
+        }
         pomodoroSeconds = 59
-        btStart.titleLabel?.text = "Start"
     }
     
 }
