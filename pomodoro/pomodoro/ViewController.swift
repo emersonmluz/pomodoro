@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btStart.layer.cornerRadius = 10
         do {
             let effect = Bundle.main.path(forResource: "lesson-25_som-irritante", ofType: "WAV")
             try sound = AVAudioPlayer(contentsOf: URL(fileURLWithPath: effect!))
