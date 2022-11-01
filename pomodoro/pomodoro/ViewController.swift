@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var sgControl: UISegmentedControl!
     
-    var pomodoroMinute: Int = 0
-    var pomodoroSeconds: Int = 5
+    var pomodoroMinute: Int = 24
+    var pomodoroSeconds: Int = 59
     var pomodoroTime: String = ""
     var timer = Timer()
     
@@ -39,20 +39,20 @@ class ViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {timer in
             self.time()
-            if sender.titleLabel?.text == "Start" || self.pomodoroMinute == 0 && self.pomodoroSeconds == -1 {
+            if sender.titleLabel?.text == "Start" {
                 timer.invalidate()
                 self.reset()
             }
             if self.pomodoroMinute == 0 && self.pomodoroSeconds == -1 {
+                timer.invalidate()
                 sender.setTitle("OK", for: .normal)
             }
         }
     }
     
     @IBAction func clickSgControl(_ sender: Any) {
-        if btStart.titleLabel?.text == "Stop" {
-            btStart.setTitle("Start", for: .normal)
-        }
+        guard btStart.titleLabel?.text != "Start" else {return}
+        btStart.setTitle("Start", for: .normal)
         reset()
     }
     
